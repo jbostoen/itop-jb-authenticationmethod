@@ -12,8 +12,16 @@ Please get in touch to discuss the terms: **jbostoen.itop@outlook.com**
 ## What?
 Adds an authentication methods tab to UserLocal. Can easily be extended to support all sorts of data. 
 
-Dropdown to pick method (e.g. token, twitter_id, facebook_id, ...) and enter information in a singleline text input field (255 chars)
+Dropdown to pick method (e.g. token, twitter_id, facebook_id, ...) and enter a value in a singleline text input field (255 chars)
 This class is meant to be extended to integrate with other applications.
+
+The fields are:
+* user_id
+* authentication_method
+* authentication_detail
+
+The combination of authentication_method and authentication_detail must always be unique.
+For simple passwords, use iTop's native user password.
 
 ## Cookbook
 
