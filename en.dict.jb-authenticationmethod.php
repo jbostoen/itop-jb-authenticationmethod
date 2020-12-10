@@ -28,6 +28,7 @@ Dict::Add('EN US', 'English', 'English', array(
 	'Class:AuthenticationMethod/Attribute:last_used' => 'Last used',
 	
 	'Errors/AuthenticationMethod/InvalidEmail' => 'Invalid email address.',
+	'Errors/AuthenticationMethod/Duplicate' => 'Duplicate authentication method (case insensitive!).',
 	
 ));
 

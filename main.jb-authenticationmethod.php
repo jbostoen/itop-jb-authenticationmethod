@@ -10,8 +10,14 @@
  
 namespace jb_itop_extensions\authentication_method;
 
+// iTop internals
 use \iApplicationObjectExtension;
+use \DBObjectSet;
+use \DBSearch;
 use \Dict;
+
+// iTop classes
+use \AuthenticationMethod;
 
 class ApplicationObjectExtension_AuthenticationMethod implements iApplicationObjectExtension {
 	 
@@ -114,19 +120,18 @@ class ApplicationObjectExtension_AuthenticationMethod implements iApplicationObj
 	 */
 	public function ValidateInput($oObject) {
 		
+		$aErrors = [];
+		
 		if($oObject instanceof AuthenticationMethod) {
 			
-			$sAuthenticationDetail = $oObject->Get('authentication_detail');
-			
+			// Validate email address
 			switch($oObject->Get('authentication_method')) {
 				
 				case 'email':
 								
-					if(!filter_var($sAuthenticationDetail, FILTER_VALIDATE_EMAIL)) {
+					if(!filter_var($oObject->Get('authentication_detail'), FILTER_VALIDATE_EMAIL)) {
 					 
-						return [
-							Dict::S('Errors/AuthenticationMethod/InvalidEmail')
-						];	
+						$aErrors[] =Dict::S('Errors/AuthenticationMethod/InvalidEmail');
 						
 					}
 				
@@ -134,7 +139,21 @@ class ApplicationObjectExtension_AuthenticationMethod implements iApplicationObj
 					break;
 					
 			}
+			
+			
+			// Prevent duplicates caused by case sensitivity
+			$oSet = new DBObjectSet(DBSearch::FromOQL('
+				SELECT AuthenticationMethod 
+				WHERE 
+					authentication_method = "'.$oObject->Get('authentication_method').'"
+					AND authentication_detail LIKE "'.$oObject->Get('authentication_detail').'"
+			'));
+			
+			if($oSet->Count() > 0) {
+				$aErrors[] = Dict::S('Errors/AuthenticationMethod/DuplicateMethod');
+			}
 		}
+		
 		
 		// No errors		
 		return [];

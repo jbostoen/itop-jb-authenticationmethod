@@ -23,6 +23,9 @@ The fields are:
 The combination of authentication_method and authentication_detail must always be unique.
 For simple passwords, use iTop's native user password.
 
+Note that programatically speaking, it might be best to consider that it's possible to 
+have duplicates due to uniqueness not taking case sensitivity in mind.
+
 ## Cookbook
 
 XML:
