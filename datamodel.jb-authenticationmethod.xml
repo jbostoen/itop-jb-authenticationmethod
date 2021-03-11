@@ -27,7 +27,7 @@
 		<class id="AuthenticationMethod" _delta="define">
 			<parent>cmdbAbstractObject</parent>
 			<properties>
-				<category>bizmodel,searchable</category>
+				<category>grant_by_profile,searchable</category>
 				<abstract>false</abstract>
 				<key_type>autoincrement</key_type>
 				<db_table>authenticationmethod</db_table>
