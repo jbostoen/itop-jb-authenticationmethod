@@ -142,7 +142,7 @@ class ApplicationObjectExtension_AuthenticationMethod implements iApplicationObj
 			
 			
 			// Prevent duplicates caused by case sensitivity
-			$oSet = new DBObjectSet(DBSearch::FromOQL('
+			$oSet = new DBObjectSet(DBSearch::FromOQL_AllData('
 				SELECT AuthenticationMethod 
 				WHERE 
 					authentication_method = "'.$oObject->Get('authentication_method').'"
