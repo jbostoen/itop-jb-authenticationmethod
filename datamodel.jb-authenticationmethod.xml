@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.6">
 	<classes>
-		<!-- Unfortunately extending didn't seem to work in 2.6.1, probably because UserLocal is PHP? -->
+		<!-- Unfortunately extending didn't seem to work in 2.6.1 - 2.7.3 (and higher?), probably because UserLocal is PHP? -->
 		<!--
 		<class id="UserLocal">
 			<fields>
@@ -63,7 +63,7 @@
 					<sql>user_id</sql>
 					<is_null_allowed>false</is_null_allowed>
 					<on_target_delete>DEL_AUTO</on_target_delete>
-					<target_class>UserLocal</target_class>
+					<target_class>User</target_class>
 				</field>
 				<field id="authentication_method" xsi:type="AttributeEnum">
 					<sql>authentication_method</sql>
