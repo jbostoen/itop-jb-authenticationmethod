@@ -1,6 +1,6 @@
 # jb-authenticationmethod
 
-Copyright (C) 2019-2021 Jeffrey Bostoen
+Copyright (c) 2019-2022 Jeffrey Bostoen
 
 [![License](https://img.shields.io/github/license/jbostoen/iTop-custom-extensions)](https://github.com/jbostoen/iTop-custom-extensions/blob/master/license.md)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/jbostoen)
@@ -26,6 +26,14 @@ For simple passwords, use iTop's native user password.
 
 Note that programatically speaking, it might be best to consider that it's possible to 
 have duplicates due to uniqueness not taking case sensitivity in mind.
+
+## Note
+
+The authentication method has been defined as a subclass of cmdbAbstractObject to allow privileged iTop users to create and edit this.  
+However, the history has been disabled, since some fields would be updated very often.  
+
+It could very well have been a direct subclass of DBObject instead, which would prohibit editing this class in iTop.
+
 
 ## Cookbook
 
