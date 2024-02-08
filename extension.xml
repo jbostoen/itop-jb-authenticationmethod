@@ -5,12 +5,12 @@
 	<author><![CDATA[jbostoen]]></author>
 	<label><![CDATA[Datamodel: Authentication Method]]></label>
 	<description><![CDATA[Adds Authentication Methods tab to UserLocal. See read me of this extension.]]></description>
-	<version>2.7.220510</version>
-	<release_date>2022-05-10</release_date>
+	<version>2.7.240208</version>
+	<release_date>2024-02-08</release_date>
 	<version_description><![CDATA[]]></version_description>
 	<itop_version_min>2.7.0</itop_version_min>
 	<status>stable</status>
 	<mandatory>false</mandatory>
-	<more_info_url>https://jeffreybostoen.be</more_info_url>
+	<more_info_url><![CDATA[https://jeffreybostoen.be]]></more_info_url>
 </extension>
 
